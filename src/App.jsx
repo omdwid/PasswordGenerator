@@ -35,7 +35,7 @@ function App() {
   }, [isNumeric, isSpecial, length]);
 
   return (
-    <div className={`w-full h-screen bg-[url('./assets/images/passwordgen_img${2}.jpeg')] bg-center flex justify-center`}>
+    <div className={`w-full h-screen bg-[url('./assets/images/passwordgen_img2.jpeg')] bg-center flex justify-center`}>
       <div className="w-[50vw] h-[200px] bg-zinc-300 mt-10 rounded-[10px] flex flex-col justify-around p-[10px]">
         <h1 className="text-center text-2xl tracking-widest font-semibold">
           PASSWORD  GENERATOR
