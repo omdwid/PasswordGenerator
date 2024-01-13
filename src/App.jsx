@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useCallback } from "react";
 import { useState } from "react";
 import { FaCheck } from "react-icons/fa6";
+import { motion } from "framer-motion"
 
 function App() {
   const [password, setPassword] = useState("");
@@ -34,13 +35,25 @@ function App() {
     setCopied(false);
   }, [isNumeric, isSpecial, length]);
 
+  const bg = "bg-green-700";
+  const bg2 = "bg-blue-700";
+
   return (
-    <div className={`w-full h-screen bg-[url('./assets/images/passwordgen_img2.jpeg')] bg-center flex justify-center`}>
-      <div className="w-[50vw] h-[200px] bg-zinc-300 mt-10 rounded-[10px] flex flex-col justify-around p-[10px]">
+    <div
+      className={`w-full h-screen bg-[url('./assets/images/passwordgen_img2.jpeg')] bg-center flex justify-center`}
+    >
+      <motion.div className="w-[50vw] h-[200px] bg-zinc-300 mt-10 rounded-[10px] flex flex-col justify-around p-[10px]"
+        initial={{transform: "translateY(-100%)", opacity: 0}}
+        animate={{transform: "translateY(100%)", opacity: 1}}
+        transition={{duration: .5}}
+      >
         <h1 className="text-center text-2xl tracking-widest font-semibold">
-          PASSWORD  GENERATOR
+          PASSWORD GENERATOR
         </h1>
-        <div className="flex items-center rounded-[10px] overflow-hidden h-[40px]">
+        <motion.div className="flex items-center rounded-[10px] overflow-hidden h-[40px]"
+          whileTap={{scale: .9}}
+          transition={{duration: .3}}
+        >
           <input type="text" className="w-[90%] h-full p-3" value={password} />
           <button
             className={`flex justify-center items-center text-white text-sm w-[10%] h-full bg-${
@@ -53,7 +66,7 @@ function App() {
           >
             {copied ? <FaCheck size="1.2rem" /> : "Copy"}
           </button>
-        </div>
+        </motion.div>
         <div className="flex justify-around">
           <div className="flex gap-[5px]">
             <input
@@ -85,7 +98,7 @@ function App() {
             <label htmlFor="length">Special Characters</label>
           </div>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 }

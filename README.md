@@ -1,3 +1,3 @@
 # Password Generator App
 ## React + Vite
-- website live at: [Website link](https://6591c16bb4d60c435c2e60c1--animated-selkie-4c789e.netlify.app/)
+- website live at: [Website link](https://65a259c799d609a979b26cad--sprightly-travesseiro-34f7aa.netlify.app/)
